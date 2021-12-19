@@ -3,9 +3,10 @@
 ```typescript
 class Foo {
     @Weaked()
-    test: Bar;
+    bar: Bar;
 
-    constructor() {
+    constructor(bar) {
+       this.bar = bar;
     }
 }
 
