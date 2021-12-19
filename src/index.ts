@@ -2,14 +2,14 @@ export function Weaked(): PropertyDecorator {
 
     return function (target, propertyKey) {
 
-        let cache: WeakRef<object>
+        let sym = Symbol('WeakRef-'+(propertyKey.toString()));
 
         Object.defineProperty(target, propertyKey, {
             get(): object {
-                return cache?.deref();
+                return this[sym]?.deref();
             },
             set(v: object) {
-                cache = new WeakRef<object>(v);
+                this[sym] = new WeakRef<object>(v);
             },
         })
     }

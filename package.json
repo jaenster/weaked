@@ -1,6 +1,6 @@
 {
   "name": "weaked",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "weak decorator, wraps it with a WeakRef descriptor",
   "main": "bin/index.js",
   "types": "bin/index.d.ts",
